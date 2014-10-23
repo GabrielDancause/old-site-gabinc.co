@@ -6,18 +6,68 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
+    <title>Gab Inc. Solutions pour entreprises.</title>
+    <meta name="description" content="Solutions web pour entreprises.">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="stylesheet" href="styles/f4e6eeab.main.css">
+    <link rel="stylesheet" href="styles/ba8441d9.main.css">
     <script src="scripts/vendor/d7100892.modernizr.js"></script>
+    <script src="scripts/smooth-scroll.js"></script>
+     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFkh6Z_8EOL388wrZsYFCauxjybtnbdxo">
+    </script>
+    <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+
+    <script type="text/javascript">
+            function initialize() {
+                var options = {
+                  center: new google.maps.LatLng(45.521789, -73.58968),
+                  zoom: 15,
+                  mapTypeId: "Toner",
+                  scrollwheel: false,
+                  navigationControl: false,
+                  mapTypeControl: false,
+                  scaleControl: false,
+
+
+                };
+                var map = new google.maps.Map(document.getElementById("map"), options);
+                map.mapTypes.set("Toner", new google.maps.StamenMapType("toner"));
+                var image = 'images/map_marker.png';
+
+                // To add the marker to the map, use the 'map' property
+                var marker = new google.maps.Marker({
+                    position:map.getCenter(),
+                    map: map,
+                    icon:image,
+                });
+
+                marker.setMap(map);
+                google.maps.event.addDomListener(window, 'load', initialize);
+            }
+        </script>
+    <script charset="utf-8" type="text/javascript">
+      $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+
+        });
+      });
+    </script>
+
     <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,500,700" rel="stylesheet" type="text/css">
   </head>
-  <body>
+  <body onload="initialize()">
     <div id="section-intro-nav" class="clearfix">
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
+        <div class="container" style="margin:0 0 0 40px">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
               <span class="sr-only">Toggle navigation</span>
@@ -29,12 +79,12 @@
 
           </div>
           <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li><a href="#services">Services</a></li>
+            <ul class="nav navbar-nav" style="padding-right:40px">
+              <li><a data-scroll href="#services">Services</a></li>
 
-              <li><a href="#projets">Projets</a></li>
+              <li><a data-scroll href="#projets">Projets</a></li>
 
-              <li><a href="mailto:info@gabinc.co">Contact</a></li>
+              <li><a data-scroll href="#contact">Contact</a></li>
             </ul>
 
 
@@ -63,20 +113,26 @@
         </div>
 
       </section>
-      <div id="services"></div>
-      <section id="section-services">
-        <div class="container-fluid">
+
+
+      <section id="section-intermission">
+        <div id="services" class="container-fluid">
           <div class="row">
             <div class="col-xs-12">
-            <h1>Gab vous offre beaucoup plus que des sites internet.</h1>
-            <p class="soustitreSection">Nous proposons à nos clients une gamme complète d’outils développés sur mesure pour vous aider à atteindre vos objectifs Web.</p>
-            <br>
+              <h1>Gab vous offre beaucoup plus que des sites internet.</h1>
+              <p class="soustitreSection">Nous proposons à nos clients une gamme complète d’outils développés sur mesure pour vous aider à atteindre vos objectifs Web.</p>
+              <br>
             </div>
-
           </div>
+        </div>
+      </section>
+
+      <section id="section-services">
+        <div class="container-fluid">
+
           <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-4">
-              <img src="images/icon-dev.svg" alt="">
+              <img src="images/icon-dev.svg" style="width:200px" alt="">
               <h3>Développement</h3>
 
               <p class="titre-colonne">Système de gestion de contenu<br>et blogue (CMS)</p>
@@ -115,7 +171,7 @@
 
 
             <div class="col-xs-12 col-sm-6 col-md-4">
-              <img src="images/icone-design.svg" style="width:260px" alt="">
+              <img src="images/icone-design.svg" style="width:210px" alt="">
               <h3>Design</h3>
               <p class="titre-colonne">Identité visuelle</p>
               <p>
@@ -142,7 +198,7 @@
 
 
             <div class="col-xs-12 col-sm-6 col-md-4">
-              <img src="images/icone-market.svg" style="width:350px" alt="">
+              <img src="images/icone-market.svg" style="width:285px" alt="">
               <h3>Communication et Marketing</h3>
 
               <p class="titre-colonne">Rédaction de contenu </p>
@@ -182,18 +238,21 @@
         </div>
       </section>
 
-      <section id="section-intermission">
 
-      </section>
-      <div id="projets"></div>
+<section id="section-intermission">
+  <div id="projets" class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Quelques-un de nos merveilleux clients</h1>
+        <p class="soustitreSection">Ils ont cru en nous et ont été bien servis.</p>
+       </div>
+    </div>
+  </div>
+</section>
+
       <section id="section-projets">
         <div class="container-fluid">
-          <div class="row">
-            <div class="col-xs-12">
-              <h1>Ils ont cru en nous et ont été bien servis.</h1>
-              <br>
-            </div>
-          </div>
+
 
           <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4">
@@ -219,6 +278,63 @@
       </section>
 
 
+  <section id="section-intermission">
+    <div id="contact" class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Venez nous voir!</h1>
+          <p class="soustitreSection">
+            Ne soyez pas gêné, nous sommes là pour vous aider. Si vous voulez juste dire bonjour, c'est parfait aussi. Café?
+          </p>
+          <br>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="section-contact">
+    <div class="container-fluid">
+
+
+      <div class="row">
+
+        <div class="col-xs-12" id="map">
+
+        </div>
+
+
+
+
+      </div>
+
+
+    </div>
+  </section>
+
+  <section id="section-footer">
+    <div class="container-fluid">
+
+
+      <div class="row">
+
+
+        <div class="col-xs-12 col-sm-8 col-md-8">
+          <h1>Gab Inc</h1>
+          4815-A Boul. St-Laurent, Montréal, Québec, H2T 1R6 +1 (514) 887-1868
+
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+        <h1>Écrivez-nous</h1> <a href="mailto:info@gabinc.co">info@gabinc.co</a>
+
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+
 
 
 
@@ -231,16 +347,28 @@
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        <script src="scripts/14e160cf.main.js"></script>
+ga('create', 'UA-10970225-33', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+        <script src="scripts/30a20df1.main.js"></script>
 
         <script src="scripts/vendor/c6b52431.bootstrap.js"></script>
+<script>
+    smoothScroll.init({
+    speed: 400, // Integer. How fast to complete the scroll in milliseconds
+    easing: 'easeOutQuad', // Easing pattern to use
+    updateURL: true, // Boolean. Whether or not to update the URL with the anchor hash on scroll
+    offset: 100, // Integer. How far to offset the scrolling anchor location in pixels
+    callbackBefore: function ( toggle, anchor ) {}, // Function to run before scrolling
+    callbackAfter: function ( toggle, anchor ) {} // Function to run after scrolling
+    });
+</script>
 </body>
 </html>
